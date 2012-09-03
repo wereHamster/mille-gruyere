@@ -42,7 +42,10 @@ class Category
   end
 
   def athletes
-    Athlete.where("geschlecht = ? AND jahrgang IN (?)", geschlecht, jahrgang)
+    ret = Athlete.where("geschlecht = ? AND jahrgang IN (?)", geschlecht, jahrgang)
+    ret.sort do |a,b|
+      (a.read_attribute(:zeit) || 999999999) <=> (b.read_attribute(:zeit) || 9999999999)
+    end
   end
 
   def geschlecht_plural

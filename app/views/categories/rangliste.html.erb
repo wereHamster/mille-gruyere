@@ -3,23 +3,27 @@
 <table class="table table-striped table-condensed table-bordered">
   <thead>
     <tr>
+      <th>Rang</th>
       <th>S/N</th>
       <th>Vorname</th>
       <th>Nachname</th>
       <th>Verein</th>
       <th>Jahrgang</th>
       <th>Zeit</th>
+      <th>Rang</th>
     </tr>
   </thead>
   <tbody>
-    <% @category.athletes.each do |athlete| %>
+    <% @category.athletes.each_with_index do |athlete, i| %>
       <tr>
+        <td><%= i + 1 %></td>
         <td><%= athlete.id %></td>
         <td><%= athlete.vorname %></td>
         <td><%= athlete.nachname %></td>
         <td><%= athlete.verein %></td>
         <td><%= athlete.jahrgang %></td>
         <td class="zeit"><%= athlete.zeit %></td>
+        <td><%= i + 1 %></td>
       </tr>
     <% end %>
   </tbody>
