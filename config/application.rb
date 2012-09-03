@@ -58,5 +58,7 @@ module MilleGruyere
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.secret_token = "0" * 30
   end
 end
