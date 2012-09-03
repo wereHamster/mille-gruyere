@@ -16,14 +16,14 @@
   <tbody>
     <% @category.athletes.each_with_index do |athlete, i| %>
       <tr>
-        <td><%= i + 1 %></td>
+        <td><strong><%= i + 1 %></strong></td>
         <td><%= athlete.id %></td>
         <td><%= athlete.vorname %></td>
         <td><%= athlete.nachname %></td>
         <td><%= athlete.verein %></td>
         <td><%= athlete.jahrgang %></td>
-        <td class="zeit"><%= athlete.zeit %></td>
-        <td><%= i + 1 %></td>
+        <td><span class="zeit"><%= athlete.zeit %></span></td>
+        <td><strong><%= i + 1 %></strong></td>
       </tr>
     <% end %>
   </tbody>
