@@ -1,0 +1,53 @@
+<%= form_for(@athlete) do |f| %>
+  <% if @athlete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@athlete.errors.count, "error") %> prohibited this athlete from being saved:</h2>
+
+      <ul>
+      <% @athlete.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vorname %><br />
+    <%= f.text_field :vorname %>
+  </div>
+  <div class="field">
+    <%= f.label :nachname %><br />
+    <%= f.text_field :nachname %>
+  </div>
+  <div class="field">
+    <%= f.label :strasse %><br />
+    <%= f.text_field :strasse %>
+  </div>
+  <div class="field">
+    <%= f.label :gemeinde %><br />
+    <%= f.text_field :gemeinde %>
+  </div>
+  <div class="field">
+    <%= f.label :jahrgang %><br />
+    <%= f.number_field :jahrgang %>
+  </div>
+  <div class="field">
+    <%= f.label :geschlecht %><br />
+    <%= f.text_field :geschlecht %>
+  </div>
+  <div class="field">
+    <%= f.label :verein %><br />
+    <%= f.text_field :verein %>
+  </div>
+  <div class="field">
+    <%= f.label :lizenz %><br />
+    <%= f.text_field :lizenz %>
+  </div>
+  <div class="field">
+    <%= f.label :zeit %><br />
+    <%= f.number_field :zeit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
