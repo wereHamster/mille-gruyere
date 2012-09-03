@@ -1,4 +1,4 @@
-Mille::Application.routes.draw do
+MilleGruyere::Application.routes.draw do
   resources :athletes
   resources :categories
 
