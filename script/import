@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require File.expand_path('../../config/environment',  __FILE__)
+
+Athlete.all.each(&:delete)
+
+CSV.foreach(ARGV[0], { headers: true }) do |row|
+  puts row.field('id')
+  Athlete.new(row.to_hash).save!
+end

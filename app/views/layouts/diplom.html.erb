@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Lucida Grande';
+        text-align:  center;
+      }
+
+      body > div {
+        margin-top: 500px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <div>REGIONALAUSSCHEIDUNG</div>
+      <div>Mittwoch, 5. September 2012</div>
+      <div>Emmmenbr&uuml;cke</div>
+
+      <div><%= @athlete.vorname + ' ' + @athlete.nachname %></div>
+
+      <div><%= @rang %>. Rang</div>
+      <div><%= @category.geschlecht_plural %> - Jahrgang <%= @category.jahrgang.first %></div>
+    </div>
+
+  </body>
+</html>

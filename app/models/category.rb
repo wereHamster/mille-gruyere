@@ -41,8 +41,16 @@ class Category
     @geschlecht = geschlecht
   end
 
-  def athleten
+  def athletes
     Athlete.where("geschlecht = ? AND jahrgang IN (?)", geschlecht, jahrgang)
+  end
+
+  def geschlecht_plural
+    if geschlecht == 'Knabe'
+      'Knaben'
+    else
+      geschlecht
+    end
   end
 
 end

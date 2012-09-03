@@ -38,30 +38,18 @@
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">Mille Gruyere 2012</a>
+        <div class="container-fluid">
+          <a class="brand" href="/">Mille Guyere 2012</a>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <div class="row">
-           <div class="span9">
-              <%= yield %>
-            </div>
-            <div class="span3">
-              <div class="well sidebar-nav">
-                <h3>Kategorien</h3>
-                <ul class="nav nav-list">
-                  <% @categories.each do |category| %>
-                    <li><%= link_to category.titel, "/categories/#{category.name}"  %></li>
-                  <% end %>
-                </ul>
-              </div><!--/.well -->
-            </div><!--/span-->
-        </div><!--/row-->
-      </div><!--/content-->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div><!--/row-->
 
       <footer>
         <p>&copy; LC Emmenstrand 2012</p>

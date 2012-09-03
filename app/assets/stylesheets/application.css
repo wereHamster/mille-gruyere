@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+.table td .zeit {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
