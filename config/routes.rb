@@ -6,4 +6,6 @@ Mille::Application.routes.draw do
   get  '/categories/:category/diplom/:athlete', to: 'categories#diplom'
 
   post '/categories/:id/result',    to: 'categories#result'
+
+  root to: 'application#index'
 end
