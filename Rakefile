@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mille::Application.load_tasks
+MilleGruyere::Application.load_tasks
