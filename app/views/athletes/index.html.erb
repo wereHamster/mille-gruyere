@@ -1,37 +1,37 @@
 <h1>Listing athletes</h1>
 
-<table>
+<table class="table table-bordered table-condensed table-striped">
+<thead>
   <tr>
+    <th>S/N</th>
     <th>Vorname</th>
     <th>Nachname</th>
-    <th>Strasse</th>
-    <th>Gemeinde</th>
     <th>Jahrgang</th>
     <th>Geschlecht</th>
     <th>Verein</th>
     <th>Lizenz</th>
-    <th>Zeit</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
+</thead>
 
+<tbody>
 <% @athletes.each do |athlete| %>
   <tr>
+    <td><%= athlete.id %></td>
     <td><%= athlete.vorname %></td>
     <td><%= athlete.nachname %></td>
-    <td><%= athlete.strasse %></td>
-    <td><%= athlete.gemeinde %></td>
     <td><%= athlete.jahrgang %></td>
     <td><%= athlete.geschlecht %></td>
     <td><%= athlete.verein %></td>
     <td><%= athlete.lizenz %></td>
-    <td><%= athlete.zeit %></td>
-    <td><%= link_to 'Show', athlete %></td>
-    <td><%= link_to 'Edit', edit_athlete_path(athlete) %></td>
-    <td><%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%= link_to 'Show', athlete, class: 'btn btn-primary btn-mini' %>
+      <%= link_to 'Edit', edit_athlete_path(athlete), class: 'btn btn-primary btn-mini' %>
+      <%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-mini' %>
+    </td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
