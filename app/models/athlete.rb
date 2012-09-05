@@ -3,11 +3,13 @@ class Athlete < ActiveRecord::Base
 
 
   def zeit=(zeit)
-    m = /(\d+):(\d+)\.(\d+)/.match(zeit)
-    if m == nil
-      errors.add(:zeit, 'Flasches Zeit format (MM:SS.sss)')
-    else
+    m = /(\d+):(\d{2})\.(\d{3})/.match(zeit)
+    if m
       write_attribute(:zeit, m[1].to_i * 1000 * 100 + m[2].to_i * 1000 + m[3].to_i)
+    elsif zeit == ''
+      write_attribute(:zeit, nil)
+    else
+      errors.add(:zeit, 'Flasches Zeit format (MM:SS.sss)')
     end
   end
 
