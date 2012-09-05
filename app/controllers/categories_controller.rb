@@ -8,6 +8,11 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def startliste
+    @category = Category.find(params[:id])
+    render layout: 'bare'
+  end
+
   def rangliste
     @category = Category.find(params[:id])
     render layout: 'bare'
