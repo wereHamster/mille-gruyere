@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require File.expand_path('../../config/environment',  __FILE__)
+
+CSV.open("output.csv", "wb") do |csv|
+  Category.all.each do |category|
+    category.athletes.select do |athlete|
+      athlete.lizenz && athlete.lizenz != '' && athlete.zeit
+    end[0..2].each do |x|
+      gemeinde = x.gemeinde.split(" ")
+      csv << [ "", category.cat, x.lizenz, x.nachname, x.vorname, x.strasse, gemeinde[0], gemeinde[1], x.verein, x.zeit_slv ]
+    end
+  end
+end
