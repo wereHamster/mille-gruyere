@@ -43,7 +43,7 @@ class Athlete < ActiveRecord::Base
   def zeit_slv
     zeit = read_attribute(:zeit)
     if zeit
-      "#{zeit / 1000 / 100}.#{pad2((zeit / 1000) % 100)}#{pad2((zeit % 1000) / 100)}"
+      "#{zeit / 1000 / 100}.#{pad2((zeit / 1000) % 100)}#{pad2((zeit % 1000) / 10)}"
     else
       nil
     end
