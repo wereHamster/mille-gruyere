@@ -7,5 +7,5 @@ gem 'sqlite3'
 gem 'therubyracer'
 
 group :assets do
-  gem "twitter-bootstrap-rails"
+  gem "twitter-bootstrap-rails", "~> 2.0.0"
 end
