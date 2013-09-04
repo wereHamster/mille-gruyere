@@ -34,7 +34,7 @@
   <tbody>
     <% @category.athletes.each_with_index do |athlete, i| %>
       <tr>
-        <td><%= link_to athlete.id, athlete %></td>
+        <td><%= link_to athlete.startnr, athlete %></td>
         <td><%= athlete.vorname %></td>
         <td><%= athlete.nachname %></td>
         <td><%= athlete.verein %></td>
@@ -42,7 +42,7 @@
         <td>
           <span class="zeit"><%= athlete.zeit %></span>
           <% if i < 8 %>
-          <a class="btn btn-mini btn-primary" style="float:right" href="/categories/<%= @category.name %>/diplom/<%= athlete.id %>?rang=<%= i + 1 %>">Diplom</a>
+          <a class="btn btn-mini btn-primary" style="float:right" href="/categories/<%= @category.name %>/diplom/<%= athlete.startnr %>?rang=<%= i + 1 %>">Diplom</a>
         <% end %>
         </td>
       </tr>

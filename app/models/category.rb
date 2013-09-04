@@ -27,9 +27,6 @@ class Category
       Category.new("K1998", "Knaben, 1998",  (1998..1998), "Knabe",   "M14"),
       Category.new("M1998", "Mädchen, 1998", (1998..1998), "Mädchen", "W14"),
 
-      Category.new("K1997", "Knaben, 1997",  (1997..1997), "Knabe",   "M15"),
-      Category.new("M1997", "Mädchen, 1997", (1997..1997), "Mädchen", "W15"),
-
       Category.new("M1989", "Mädchen, 1989", (1989..1989), "Mädchen", ""),
     ]
   end
