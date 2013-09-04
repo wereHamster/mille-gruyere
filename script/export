@@ -3,13 +3,17 @@
 require 'csv'
 require File.expand_path('../../config/environment',  __FILE__)
 
-CSV.open("output.csv", "wb") do |csv|
+CSV.open("export.csv", "wb") do |csv|
   Category.all.each do |category|
-    category.athletes.select do |athlete|
-      athlete.lizenz && athlete.lizenz != '' && athlete.zeit
-    end[0..2].each do |x|
+
+    csv << [ category.titel ]
+    csv << [ "Rang", "Nachname", "Vorname", "PLZ", "Ort", "Strasse", "Verein", "Zeit" ]
+
+    category.athletes.select do |x|
+      x.zeit != nil
+    end.each_with_index do |x, i|
       gemeinde = x.gemeinde.split(" ")
-      csv << [ "", category.cat, x.lizenz, x.nachname, x.vorname, x.strasse, gemeinde[0], gemeinde[1], x.verein, x.zeit_slv ]
+      csv << [ (i + 1).to_s, x.nachname, x.vorname, gemeinde[0], gemeinde[1], x.strasse, x.verein, x.zeit, "" ]
     end
   end
 end

@@ -6,28 +6,26 @@ class Category
 
   def self.all
     [
-      Category.new("K2004", "Knaben, 2004 und jünger",  (2004..2012), "Knabe",   "M09"),
       Category.new("M2004", "Mädchen, 2004 und jünger", (2004..2012), "Mädchen", "W09"),
+      Category.new("K2004", "Knaben, 2004 und jünger",  (2004..2012), "Knabe",   "M09"),
 
-      Category.new("K2003", "Knaben, 2003",  (2003..2003), "Knabe",   "M10"),
       Category.new("M2003", "Mädchen, 2003", (2003..2003), "Mädchen", "W10"),
+      Category.new("K2003", "Knaben, 2003",  (2003..2003), "Knabe",   "M10"),
 
-      Category.new("K2002", "Knaben, 2002",  (2002..2002), "Knabe",   "M10"),
-      Category.new("M2002", "Mädchen, 2002", (2002..2002), "Mädchen", "W10"),
+      Category.new("M2002", "Mädchen, 2002", (2002..2002), "Mädchen", "W11"),
+      Category.new("K2002", "Knaben, 2002",  (2002..2002), "Knabe",   "M11"),
 
-      Category.new("K2001", "Knaben, 2001",  (2001..2001), "Knabe",   "M11"),
-      Category.new("M2001", "Mädchen, 2001", (2001..2001), "Mädchen", "W11"),
+      Category.new("M2001", "Mädchen, 2001", (2001..2001), "Mädchen", "W12"),
+      Category.new("K2001", "Knaben, 2001",  (2001..2001), "Knabe",   "M12"),
 
-      Category.new("K2000", "Knaben, 2000",  (2000..2000), "Knabe",   "M12"),
-      Category.new("M2000", "Mädchen, 2000", (2000..2000), "Mädchen", "W12"),
+      Category.new("M2000", "Mädchen, 2000", (2000..2000), "Mädchen", "W13"),
+      Category.new("K2000", "Knaben, 2000",  (2000..2000), "Knabe",   "M13"),
 
-      Category.new("K1999", "Knaben, 1999",  (1999..1999), "Knabe",   "M13"),
-      Category.new("M1999", "Mädchen, 1999", (1999..1999), "Mädchen", "W13"),
+      Category.new("M1999", "Mädchen, 1999", (1999..1999), "Mädchen", "W14"),
+      Category.new("K1999", "Knaben, 1999",  (1999..1999), "Knabe",   "M14"),
 
-      Category.new("K1998", "Knaben, 1998",  (1998..1998), "Knabe",   "M14"),
-      Category.new("M1998", "Mädchen, 1998", (1998..1998), "Mädchen", "W14"),
-
-      Category.new("M1989", "Mädchen, 1989", (1989..1989), "Mädchen", ""),
+      Category.new("M1998", "Mädchen, 1998", (1998..1998), "Mädchen", "W15"),
+      Category.new("K1998", "Knaben, 1998",  (1998..1998), "Knabe",   "M15"),
     ]
   end
 
