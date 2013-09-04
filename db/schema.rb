@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903135901) do
+ActiveRecord::Schema.define(:version => 20130904125316) do
 
   create_table "athletes", :force => true do |t|
     t.string   "vorname"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120903135901) do
     t.integer  "zeit"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "startnr"
   end
 
 end
