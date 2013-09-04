@@ -9,7 +9,7 @@ class AthletesController < ApplicationController
   end
 
   def show
-    @athlete = Athlete.find_by_startnr(params[:id])
+    @athlete = Athlete.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +27,7 @@ class AthletesController < ApplicationController
   end
 
   def edit
-    @athlete = Athlete.find_by_startnr(params[:id])
+    @athlete = Athlete.find(params[:id])
   end
 
   def create
@@ -45,7 +45,7 @@ class AthletesController < ApplicationController
   end
 
   def update
-    @athlete = Athlete.find_by_startnr(params[:id])
+    @athlete = Athlete.find(params[:id])
 
     respond_to do |format|
       if @athlete.update_attributes(params[:athlete])
@@ -59,12 +59,17 @@ class AthletesController < ApplicationController
   end
 
   def destroy
-    @athlete = Athlete.find_by_startnr(params[:id])
+    @athlete = Athlete.find(params[:id])
     @athlete.destroy
 
     respond_to do |format|
       format.html { redirect_to athletes_url }
       format.json { head :no_content }
     end
+  end
+
+  def nachmeldungen
+      @athletes = Athlete.where(['startnr >= 240', params[:startnr]])
+      render layout: 'bare'
   end
 end

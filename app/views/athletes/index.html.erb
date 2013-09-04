@@ -25,9 +25,9 @@
     <td><%= athlete.verein %></td>
     <td><%= athlete.lizenz %></td>
     <td>
-      <%= link_to 'Show', athlete, class: 'btn btn-primary btn-mini' %>
-      <%= link_to 'Edit', edit_athlete_path(athlete), class: 'btn btn-primary btn-mini' %>
-      <%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-mini' %>
+      <%= link_to 'Show', "/athletes/" + athlete.id.to_s, class: 'btn btn-primary btn-mini' %>
+      <%= link_to 'Edit', "/athletes/" + athlete.id.to_s + "/edit", class: 'btn btn-primary btn-mini' %>
+      <%= link_to 'Destroy', "/athletes/" + athlete.id.to_s, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-mini' %>
     </td>
   </tr>
 <% end %>
