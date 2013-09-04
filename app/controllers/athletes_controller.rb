@@ -9,7 +9,7 @@ class AthletesController < ApplicationController
   end
 
   def show
-    @athlete = Athlete.find(params[:id])
+    @athlete = Athlete.find_by_startnr(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +27,7 @@ class AthletesController < ApplicationController
   end
 
   def edit
-    @athlete = Athlete.find(params[:id])
+    @athlete = Athlete.find_by_startnr(params[:id])
   end
 
   def create
@@ -45,7 +45,7 @@ class AthletesController < ApplicationController
   end
 
   def update
-    @athlete = Athlete.find(params[:id])
+    @athlete = Athlete.find_by_startnr(params[:id])
 
     respond_to do |format|
       if @athlete.update_attributes(params[:athlete])
@@ -59,7 +59,7 @@ class AthletesController < ApplicationController
   end
 
   def destroy
-    @athlete = Athlete.find(params[:id])
+    @athlete = Athlete.find_by_startnr(params[:id])
     @athlete.destroy
 
     respond_to do |format|

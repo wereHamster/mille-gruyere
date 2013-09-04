@@ -6,6 +6,6 @@ require File.expand_path('../../config/environment',  __FILE__)
 Athlete.all.each(&:delete)
 
 CSV.foreach(ARGV[0], { headers: true }) do |row|
-  puts row.field('id')
+  row.delete('kategorie')
   Athlete.new(row.to_hash).save!
 end

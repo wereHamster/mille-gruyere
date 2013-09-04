@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def result
-    athlete = Athlete.find(params[:startnr])
+    athlete = Athlete.find_by_startnr(params[:startnr])
     athlete.update_attribute(:zeit, params[:zeit])
     if athlete.errors[:zeit].empty?
       redirect_to category_path(params[:id])
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
 
   def diplom
     @category = Category.find(params[:category])
-    @athlete  = Athlete.find(params[:athlete])
+    @athlete  = Athlete.find_by_startnr(params[:athlete])
     @rang     = params[:rang]
 
     render layout: 'diplom'
