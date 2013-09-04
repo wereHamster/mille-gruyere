@@ -69,7 +69,16 @@ class AthletesController < ApplicationController
   end
 
   def nachmeldungen
-      @athletes = Athlete.where(['startnr >= 240', params[:startnr]])
+      @athletes = Athlete.where(['startnr >= ?', params[:startnr]])
       render layout: 'bare'
+  end
+
+  def switch_names
+    athlete = Athlete.find(params[:id])
+    tmp = athlete.vorname
+    athlete.vorname = athlete.nachname
+    athlete.nachname = tmp
+    athlete.save
+    redirect_to '/athletes'
   end
 end

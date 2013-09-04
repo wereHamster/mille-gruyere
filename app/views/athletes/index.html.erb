@@ -18,7 +18,9 @@
 <% @athletes.each do |athlete| %>
   <tr>
     <td><%= athlete.startnr %></td>
-    <td><%= athlete.vorname %></td>
+    <td><%= athlete.vorname %>
+        <%= link_to '<~>', "/athletes/" + athlete.id.to_s + "/switch-names", method: :post, class: 'btn btn-mini' %>
+    </td>
     <td><%= athlete.nachname %></td>
     <td><%= athlete.jahrgang %></td>
     <td><%= athlete.geschlecht %></td>

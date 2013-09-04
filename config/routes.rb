@@ -1,5 +1,6 @@
 MilleGruyere::Application.routes.draw do
   get  '/athletes/nachmeldungen',  to: 'athletes#nachmeldungen'
+  post '/athletes/:id/switch-names',  to: 'athletes#switch_names'
   resources :athletes
   resources :categories
 
