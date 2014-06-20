@@ -34,7 +34,7 @@
   <tbody>
     <% @category.athletes.each_with_index do |athlete, i| %>
       <tr>
-        <td><%= link_to athlete.startnr, "/athletes/" + athlete.startnr.to_s %></td>
+        <td><%= link_to athlete.startnr, "/athletes/" + athlete.id.to_s %></td>
         <td><%= athlete.vorname %></td>
         <td><%= athlete.nachname %></td>
         <td><%= link_to athlete.verein, "/verein/" + athlete.verein.to_s %></td>
