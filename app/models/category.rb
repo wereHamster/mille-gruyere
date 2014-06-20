@@ -46,7 +46,11 @@ class Category
     ret = Athlete.where("geschlecht = ? AND jahrgang IN (?)", geschlecht, jahrgang)
     ret.sort do |a,b|
       az = a.read_attribute(:zeit)
+      if az && az < 0 then az = 99999999 end
+
       bz = b.read_attribute(:zeit)
+      if bz && bz < 0 then bz = 99999999 end
+
       if (az && bz) then
         az <=> bz
       elsif (!az && !bz)
