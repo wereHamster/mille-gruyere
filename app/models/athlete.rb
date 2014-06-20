@@ -1,5 +1,7 @@
 class Athlete < ActiveRecord::Base
-  attr_accessible :startnr, :gemeinde, :geschlecht, :jahrgang, :lizenz, :nachname, :strasse, :verein, :vorname, :zeit
+
+  attr_accessible :startnr, :gemeinde, :geschlecht, :jahrgang, :lizenz
+  attr_accessible :nachname, :strasse, :verein, :vorname, :zeit
 
 
   def zeit=(zeit)

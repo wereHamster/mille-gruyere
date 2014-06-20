@@ -1,11 +1,59 @@
 #!/usr/bin/env ruby
+# encoding: UTF-8
 
 require 'csv'
 require File.expand_path('../../config/environment',  __FILE__)
 
 Athlete.all.each(&:delete)
 
+block_map = {}
+block_map['2005w'] = 1
+block_map['2005m'] = 26
+block_map['2004w'] = 51
+block_map['2004m'] = 71
+block_map['2003w'] = 91
+block_map['2003m'] = 106
+block_map['2002w'] = 121
+block_map['2002m'] = 136
+block_map['2001w'] = 151
+block_map['2001m'] = 166
+block_map['2000w'] = 181
+block_map['2000m'] = 196
+block_map['1999w'] = 211
+block_map['1999m'] = 226
+
+block_category = nil
+startnr        = 1
+
 CSV.foreach(ARGV[0], { headers: true }) do |row|
-  row.delete('kategorie')
-  Athlete.new(row.to_hash).save!
+  # row.delete('kategorie')
+
+  h = {}
+  h[:gemeinde]   = row.field 'ort'
+  h[:geschlecht] = row.field('geschlecht') == 'w' ? 'Mädchen' : 'Knabe'
+  h[:jahrgang]   = row.field 'Geb-Jahr'
+  h[:lizenz]     = row.field 'lizenznr'
+  h[:nachname]   = row.field 'nachname'
+  h[:vorname]    = row.field 'vorname'
+  h[:verein]     = row.field 'verein'
+  h[:strasse]    = row.field 'adresse'
+
+  category = row.field('kategorie') + row.field('geschlecht')
+  if block_category != category then
+    block_category  = category
+    startnr         = block_map[category]
+    puts "Starting new block for category #{block_category}: #{startnr}"
+  else
+    startnr         = startnr + 1
+  end
+
+  h[:startnr] = startnr
+
+  Athlete.new(h).save!
+end
+
+Athlete.all.each do |athlete|
+  if Athlete.where(:startnr => athlete.startnr).count > 1 then
+    puts "Startnr #{athlete.startnr} mehrmals vergeben!"
+  end
 end
