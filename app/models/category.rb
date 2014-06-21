@@ -10,7 +10,7 @@ class Category
       Category.new("K2005", "Knaben, 2005 und jünger",  (2005..2014), "Knabe",   "M09"),
 
       Category.new("M2004", "Mädchen, 2004", (2004..2004), "Mädchen", "W10"),
-      Category.new("K2005", "Knaben, 2004",  (2004..2004), "Knabe",   "M10"),
+      Category.new("K2004", "Knaben, 2004",  (2004..2004), "Knabe",   "M10"),
 
       Category.new("M2003", "Mädchen, 2003", (2003..2003), "Mädchen", "W11"),
       Category.new("K2003", "Knaben, 2003",  (2003..2003), "Knabe",   "M11"),
