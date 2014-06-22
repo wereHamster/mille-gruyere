@@ -5,23 +5,25 @@
       body {
         font-family: Futura;
         text-align:  center;
+        font-weight: bold;
       }
       .gt { font-family: 'Good Times' }
     </style>
   </head>
   <body>
 
-    <div style="margin-top:416pt">
-      <div class="gt" style="font-size:18pt">REGIONALAUSSCHEIDUNG</div>
-      <div class="gt" style="font-size:14pt;margin-top:10pt">Samstag, 21. Juni 2014</div>
-      <div class="gt" style="font-size:14pt;line-height:20pt">Emmenbr&uuml;cke</div>
+    <div style="margin-top:495pt">
+      <div class="gt" style="font-size:17pt;margin-top:10pt">
+        Samstag, 21. Juni 2014
+        <span style="margin-left:20pt">Emmenbr&uuml;cke</span>
+      </div>
 
       <div style="font-size:36pt;font-weight:bold;margin-top:34pt;font-family:Verdana"><%= @athlete.vorname + ' ' + @athlete.nachname %></div>
 
-      <div class="gt" style="font-size:24pt;margin-top:42pt"><%= @rang %>. Rang</div>
+      <div class="gt" style="font-size:24pt;margin-top:30pt"><%= @rang %>. Rang</div>
       <div class="gt" style="font-size:14pt;line-height:18pt"><%= @category.geschlecht_plural %> - Jahrgang <%= @category.jahrgang.first %></div>
 
-      <div style="font-size:18pt;margin-top:30pt">www.lcemmenstrand.ch</div>
+      <div style="font-size:18pt;margin-top:39pt;padding-left:20pt">www.lcemmenstrand.ch</div>
     </div>
 
   </body>

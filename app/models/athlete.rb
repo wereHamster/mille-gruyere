@@ -4,6 +4,24 @@ class Athlete < ActiveRecord::Base
   attr_accessible :nachname, :strasse, :verein, :vorname, :zeit
 
 
+  def plz
+    m = /^(\d{4})/.match(gemeinde)
+    if (m)
+      return m[1]
+    else
+      ""
+    end
+  end
+
+  def ort
+    m = /^(\d{4}) (.*)/.match(gemeinde)
+    if (m)
+      return m[2]
+    else
+      ""
+    end
+  end
+
   def zeit=(zeit)
     if zeit.to_i < 0
       write_attribute(:zeit, zeit.to_i)
@@ -41,6 +59,8 @@ class Athlete < ActiveRecord::Base
     zeit = read_attribute(:zeit)
     if zeit == -1
       "n/a"
+    elsif zeit == -2
+      "dnf"
     elsif zeit
       "#{zeit / 1000 / 100}:#{pad2((zeit / 1000) % 100)}.#{pad3(zeit % 1000)}"
     else
@@ -52,6 +72,8 @@ class Athlete < ActiveRecord::Base
     zeit = read_attribute(:zeit)
     if zeit == -1
       "n/a"
+    elsif zeit == -2
+      "dnf"
     elsif zeit
       "#{zeit / 1000 / 100}.#{pad2((zeit / 1000) % 100)}#{pad2((zeit % 1000) / 10)}"
     else
