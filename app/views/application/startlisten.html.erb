@@ -1,0 +1,26 @@
+<h1>Startlisten</h1>
+
+<% @categories.each do |cat| %>
+<h2><%= cat.name %></h2>
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <th>Vorname</th>
+      <th>Nachname</th>
+      <th>Verein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cat.athletes.each_with_index do |athlete, i| %>
+      <tr>
+        <td><%= athlete.startnr %></td>
+        <td><%= athlete.vorname %></td>
+        <td><%= athlete.nachname %></td>
+        <td><%= athlete.verein %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>

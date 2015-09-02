@@ -10,5 +10,7 @@ MilleGruyere::Application.routes.draw do
   get  '/categories/:category/diplom/:athlete',  to: 'categories#diplom'
   get  '/verein/:verein',  to: 'verein#show'
 
+  get  '/startlisten', to: 'application#startlisten'
+
   root to: 'application#index'
 end

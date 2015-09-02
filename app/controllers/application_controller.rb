@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
 
+  def startlisten
+    @categories = Category.all
+    render layout: 'bare'
+  end
+
 private
 
   def load_categories
