@@ -1,6 +1,6 @@
 class AthletesController < ApplicationController
   def index
-    @athletes = Athlete.all
+    @athletes = Athlete.order :startnr
 
     respond_to do |format|
       format.html # index.html.erb
