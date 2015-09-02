@@ -6,8 +6,14 @@ class Category
 
   def self.all
     [
-      Category.new("M2006", "Mädchen, 2006 und jünger", (2006..2015), "Mädchen", "W09"),
-      Category.new("K2006", "Knaben, 2006 und jünger",  (2006..2015), "Knabe",   "M09"),
+      Category.new("M2008", "Mädchen, 2008 und jünger", (2008..2015), "Mädchen", "W09"),
+      Category.new("K2008", "Knaben, 2008 und jünger",  (2008..2015), "Knabe",   "M09"),
+
+      Category.new("M2007", "Mädchen, 2007", (2007..2007), "Mädchen", "W09"),
+      Category.new("K2007", "Knaben, 2007",  (2007..2007), "Knabe",   "M09"),
+
+      Category.new("M2006", "Mädchen, 2006", (2006..2006), "Mädchen", "W09"),
+      Category.new("K2006", "Knaben, 2006",  (2006..2006), "Knabe",   "M09"),
 
       Category.new("M2005", "Mädchen, 2005", (2005..2005), "Mädchen", "W10"),
       Category.new("K2005", "Knaben, 2005",  (2005..2005), "Knabe",   "M10"),
