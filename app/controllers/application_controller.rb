@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     render layout: 'bare'
   end
 
+  def ranglisten
+    @categories = Category.all
+    render layout: 'bare'
+  end
+
 private
 
   def load_categories

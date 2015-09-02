@@ -11,6 +11,7 @@ MilleGruyere::Application.routes.draw do
   get  '/verein/:verein',  to: 'verein#show'
 
   get  '/startlisten', to: 'application#startlisten'
+  get  '/ranglisten', to: 'application#ranglisten'
 
   root to: 'application#index'
 end
